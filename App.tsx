@@ -5,7 +5,7 @@ export default function App() {
   const [count, setCount] = useState(0);
   const increaseCount = () => setCount(count + 1);
   return (
-    <View style={style.container}>
+    <View style={style.container}>a
       <MessageComponent message={'Hello'} />
       <MessageComponent message={count} />
       <CounterButton callback={increaseCount} />
