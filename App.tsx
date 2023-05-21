@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { Text, View,Image, TouchableOpacity, StyleSheet, Button } from 'react-native';
 
 export default function App() {
@@ -15,13 +15,15 @@ export default function App() {
 
 const CounterButton = ({ callback }) => {
   return <Button title={`Increase Count by 1`} onPress={callback} />;
+  return <Button title={`Click Me`} onPress={callback} />;
 };
 
 const MessageComponent = ({ message }) => {
   return (
     <View>
+      <Button color='orange' title={`Click Me`} onPress={useCallback} />
       <Text numberOfLines={1} style={style.headerText}>{message}</Text>
-      <TouchableOpacity onPress={() => alert('You tapped the text!')}>
+      <TouchableOpacity onPress={() => alert('You tapped the image <3 !')}>
       <Image 
       resizeMode='contain'
       fadeDuration={1000}
