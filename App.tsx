@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Text, View,Image, TouWF, StyleSheet, Button } from 'react-native';
+import { Text, View,Image, TouchableOpacity, StyleSheet, Button } from 'react-native';
 
 export default function App() {
   const [count, setCount] = useState(0);
@@ -21,11 +21,13 @@ const MessageComponent = ({ message }) => {
   return (
     <View>
       <Text numberOfLines={1} style={style.headerText}>{message}</Text>
+      <TouchableOpacity onPress={() => alert('You tapped the text!')}>
       <Image 
       resizeMode='contain'
       fadeDuration={1000}
       borderRadius={30}
       source={require('./assets/ReactNativeLogo.png')}/>
+      </TouchableOpacity>
     </View>
   );
 };
