@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
+import { Text, View,Image, TouWF, StyleSheet, Button } from 'react-native';
 
 export default function App() {
   const [count, setCount] = useState(0);
   const increaseCount = () => setCount(count + 1);
   return (
     <View style={style.container}>
-      <MessageComponent message={'Hello'} />
+      <MessageComponent message={'Wecome to React Native'} />
       <MessageComponent message={count} />
       <CounterButton callback={increaseCount} />
     </View>
@@ -20,7 +20,12 @@ const CounterButton = ({ callback }) => {
 const MessageComponent = ({ message }) => {
   return (
     <View>
-      <Text style={style.headerText}>{message}</Text>
+      <Text numberOfLines={1} style={style.headerText}>{message}</Text>
+      <Image 
+      resizeMode='contain'
+      fadeDuration={1000}
+      borderRadius={30}
+      source={require('./assets/ReactNativeLogo.png')}/>
     </View>
   );
 };
@@ -28,13 +33,13 @@ const MessageComponent = ({ message }) => {
 const style = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'aqua',
     alignItems: 'center',
     justifyContent: 'center',
   },
   headerText: {
     color: 'black',
-    fontSize: 40,
+    fontSize: 30,
     textAlign: 'center',
   },
 });
