@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { Text, View,Image, TouchableOpacity, StyleSheet, Button } from 'react-native';
+import {Alert, Text, View,Image, TouchableOpacity, StyleSheet, Button } from 'react-native';
 
 export default function App() {
   const [count, setCount] = useState(0);
@@ -13,7 +13,8 @@ export default function App() {
       width: 200,
       height: 200,
       uri:"https://railsware.com/blog/wp-content/uploads/2017/12/React-180x180.png"}} />  
-      <Button title='Click Me' onPress={(console.log("Button tapped <3"))} />
+      <Button title='Click Me' onPress={() => Alert.alert( "Clickable", "Do you want to close?" ,
+     [{text:"Yes"}, {text:"No"},])} />
       <Image
       resizeMode='contain'
       fadeDuration={1000}
