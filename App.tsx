@@ -8,8 +8,12 @@ export default function App() {
   return (
     <View style={style.container}>
       <MessageComponent message={'Wecome to React Native'} />
-      <Image 
-      flexWrap='wrap'
+      <Image source={{
+      fadeDuration: 3000,
+      width: 200,
+      height: 200,
+      uri:"https://railsware.com/blog/wp-content/uploads/2017/12/React-180x180.png"}} />  
+      <Image
       resizeMode='contain'
       fadeDuration={1000}
       borderRadius={30}
@@ -41,7 +45,7 @@ const MessageComponent = ({ message }) => {
 const style = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'aqua',
+    backgroundColor: 'pink',
     alignItems: 'center',
     justifyContent: 'center',
 
