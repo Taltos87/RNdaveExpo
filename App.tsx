@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import {Alert, Text, View,Image, TouchableOpacity, StyleSheet, Button } from 'react-native';
+import {Alert, Text, View,Image, TouchableOpacity, StyleSheet, Button, Pressable  } from 'react-native';
 
 export default function App() {
   const [count, setCount] = useState(0);
@@ -8,19 +8,28 @@ export default function App() {
   return (
     <View style={style.container}>
       <MessageComponent message={'Wecome to React Native'} />
-      <Image source={{
-      fadeDuration: 3000,
-      width: 200,
-      height: 200,
-      uri:"https://railsware.com/blog/wp-content/uploads/2017/12/React-180x180.png"}} />  
-      <Button title='Click Me' onPress={() => Alert.alert( "Clickable", "Do you want to close?" ,
-     [{text:"Yes"}, {text:"No"},])} />
+      
       <Image
+      marginBottom={20}  
+      fadeDuration={3000}
+      source={{
+        width: 200,
+        height: 200,
+        uri:"https://railsware.com/blog/wp-content/uploads/2017/12/React-180x180.png"}} />  
+     
+      <Button  title='Click Me' onPress={() => Alert.alert("Clickable", "Do you want to close?",
+     [{text:"Yes"}, {text:"No"},])} />
+      
+      <Image
+      blurRadius={1}  
+      marginTop={20}
       resizeMode='contain'
       fadeDuration={1000}
       borderRadius={30}
-      style={{width: 200, height: 200}}
-      source={require('./assets/ReactNativeLogo.png')}/>
+      style={{width: 180, height: 180}}
+      source={require('./assets/ReactNativeLogo.png')} />
+      
+
       <MessageComponent message={count} />
       <CounterButton callback={increaseCount} />
       <CounterButton2 callback={decreaseCount} />
@@ -64,5 +73,12 @@ const style = StyleSheet.create({
     borderTopWidth: 10, borderColor: 'red',
     alignContent:'center', },
    
-  Button:{}
+  Button: {
+    color: 'navy',
+    fontSize: 25,
+    fontFamily: 'Roboto',
+    textAlign: 'center',
+    paddingBottom: 40,
+    paddingTop: 20,
+  }
 });
