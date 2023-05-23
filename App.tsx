@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import {Alert, Text, View,Image, TouchableOpacity, StyleSheet, Button } from 'react-native';
 
 export default function App() {
