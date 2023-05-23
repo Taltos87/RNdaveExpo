@@ -13,6 +13,7 @@ export default function App() {
       width: 200,
       height: 200,
       uri:"https://railsware.com/blog/wp-content/uploads/2017/12/React-180x180.png"}} />  
+      <Button title='Click Me' onPress={(console.log("Button tapped <3"))} />
       <Image
       resizeMode='contain'
       fadeDuration={1000}
@@ -61,4 +62,6 @@ const style = StyleSheet.create({
   Image: { 
     borderTopWidth: 10, borderColor: 'red',
     alignContent:'center', },
+   
+  Button:{}
 });
